@@ -1,4 +1,4 @@
-node('maven') {
+node('nodejs') {
     
     
     def buildEnv =  null 
