@@ -1,11 +1,5 @@
-node('nodejs') {
-    
-    
-    def buildEnv =  null 
-    
-    def deployEnv = null 
+node('maven') {
 
-	
     stage('Checkout source') {
 	
 	   checkoutSource()
