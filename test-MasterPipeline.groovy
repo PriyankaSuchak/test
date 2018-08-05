@@ -1,5 +1,3 @@
-@Library('pengg-openshift-pipelines') _
-
 node('maven') {
     
     
@@ -23,36 +21,36 @@ node('maven') {
 	
 	stage ('Static Code Analysis') {
 	
-	   staticCodeAnalysis()
+	   echo "doing code analysis"
 	
 	}
 
 	stage('Start OpenShift build') {
 	   
-           startOcpBinaryBuild(buildEnv)
+           echo "doing openshift builds"
 
 	}
 	
 	stage('Scan Image') {
 	   
-           scanImage()
+           echo "doing image scan"
 
 	}
 	
 	stage('Tag OpenShift Image') {
 	   
-           tagOcpImage()
+           echo "tag image"
 	}
 
-    	stage('Deploy to TPAAS') {
+    	stage('Deploy to Test') {
 	   
-           deployToOcp(deployEnv)
+           echo "deploy to cluster"
 
 	}
 	
 	stage('Send Email Notification') {
 	   
-           sendEmailNotification()
+           echo "send email"
 
 	}
 }
