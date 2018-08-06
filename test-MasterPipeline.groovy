@@ -1,4 +1,4 @@
-node('maven') {
+node('nodejs') {
 
     stage('Checkout source') {
 	
